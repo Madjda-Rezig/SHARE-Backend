@@ -8,6 +8,7 @@ const ErrorHandler = require("./middlewares/ErrorHandler")
 
 const userRouter = require("./routes/userRoute")
 const authRouter = require("./routes/authentificationRoute")
+const articleRouter = require("./routes/articleRoute")
 
 
 
@@ -21,6 +22,7 @@ index.use(express.urlencoded({ extended: true }))
 
 index.use("/users", userRouter)
 index.use("/authentification", authRouter)
+index.use("/article", articleRouter)
 
 index.use("/*", (req, res) => {
   res.status(404).json("Not found!")

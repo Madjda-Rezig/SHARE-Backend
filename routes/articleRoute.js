@@ -1,10 +1,11 @@
 
 const {
-    getAllArticles,
-    getArticleById,
-    createArticle,
-    updateArticle,
-    deleteArticle
+    ajouterArticle,
+    lireArticle,
+    lireTousArticles,
+    modifierArticle,
+    supprimerArticle
+    
 } = require('../controllers/articleController');
 
 const articleRouter = require("express").Router()
@@ -12,18 +13,18 @@ const articleRouter = require("express").Router()
 
 articleRouter
 // Route pour récupérer tous les articles
-.get('/', getAllArticles)
+.get('/', lireTousArticles)
 
 // Route pour récupérer un article par son id
-.get('/:id', getArticleById)
+.get('/:id', lireArticle)
 
 // Route pour créer un article
-.post('/', protect, createArticle)
+.post('/', ajouterArticle)
 
 // Route pour mettre à jour un article
-.put('/:id', protect, updateArticle)
+.put('/:id', modifierArticle)
 
 // Route pour supprimer un article
-.delete('/:id', protect, deleteArticle)
+.delete('/:id', supprimerArticle)
 
-module.exports = articleRouter;
+module.exports = articleRouter
