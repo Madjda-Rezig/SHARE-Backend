@@ -17,9 +17,9 @@ exports.ajouterUtilisateur = expressAsyncHandler(async (req, res) => {
     host: 'smtp.ethereal.email',
     port: 587,
     auth: {
-        user: 'cory95@ethereal.email',
-        pass: 'XPhdMc6YWteZ9bMuSc'
-    }
+      user: 'devyn.runolfsdottir@ethereal.email',
+      pass: '91J2CJHRmTHneMXe9v'
+  }
 });
 
   // send mail with defined transport object
