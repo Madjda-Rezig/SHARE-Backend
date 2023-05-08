@@ -1,6 +1,4 @@
-const express = require('express');
-const router = express.Router();
-const {protect} = require("../middlewares/authMiddleware");
+
 const {
     getAllArticles,
     getArticleById,
@@ -9,19 +7,23 @@ const {
     deleteArticle
 } = require('../controllers/articleController');
 
+const articleRouter = require("express").Router()
+
+
+articleRouter
 // Route pour récupérer tous les articles
-router.get('/', getAllArticles);
+.get('/', getAllArticles)
 
 // Route pour récupérer un article par son id
-router.get('/:id', getArticleById);
+.get('/:id', getArticleById)
 
 // Route pour créer un article
-router.post('/', protect, createArticle);
+.post('/', protect, createArticle)
 
 // Route pour mettre à jour un article
-router.put('/:id', protect, updateArticle);
+.put('/:id', protect, updateArticle)
 
 // Route pour supprimer un article
-router.delete('/:id', protect, deleteArticle);
+.delete('/:id', protect, deleteArticle)
 
-module.exports = router;
+module.exports = articleRouter;
