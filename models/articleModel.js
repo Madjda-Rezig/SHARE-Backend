@@ -13,7 +13,7 @@ const ArticleSchema = new mongoose.Schema(
     auteur: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "users",
-      required: true,
+      required: false,
     },
     date_creation: {
       type: Date,

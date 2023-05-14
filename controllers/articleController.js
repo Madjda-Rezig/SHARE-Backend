@@ -8,9 +8,9 @@ exports.ajouterArticle = expressAsyncHandler(async (req, res) => {
     const article = await ArticleModel.create({
       titre,
       contenu,
-      image,
-      auteur: req.user._id,
+      image: req.file.filename,
     });
+    // auteur: req.user._id,
     res.status(201).json(article);
   } catch (error) {
     res.status(400);

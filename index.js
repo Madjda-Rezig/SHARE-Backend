@@ -1,21 +1,17 @@
 const express = require("express")
 const mongoose = require("mongoose")
+const cors = require('cors')
 mongoose.set('strictQuery', false);
-
-
-
-const ErrorHandler = require("./middlewares/ErrorHandler")
-
 const userRouter = require("./routes/userRoute")
 const authRouter = require("./routes/authentificationRoute")
 const articleRouter = require("./routes/articleRoute")
-
-
-
-
+const ErrorHandler = require("./middlewares/ErrorHandler")
 require("dotenv").config()
 
 const index = express()
+index.use(cors({
+  origin: 'http://localhost:3000'
+}))
 index.use(express.json())
 index.use(express.urlencoded({ extended: true }))
 

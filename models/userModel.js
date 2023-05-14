@@ -45,7 +45,7 @@ const UserSchema = mongoose.Schema(
   },
   { timestamps: true }
 )
-//Sub classes
+
 
 const AdminSchema = new mongoose.Schema({})
 
