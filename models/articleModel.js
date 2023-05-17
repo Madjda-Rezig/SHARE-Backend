@@ -10,6 +10,10 @@ const ArticleSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    categorie: {
+      type: String,
+      required: true,
+    },
     auteur: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "users",
@@ -21,6 +25,7 @@ const ArticleSchema = new mongoose.Schema(
     },
     photo: {
       type: String,
+      required: false,
     },
   },
   { timestamps: true }

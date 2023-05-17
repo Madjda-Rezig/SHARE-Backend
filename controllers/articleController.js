@@ -4,11 +4,12 @@ const expressAsyncHandler = require("express-async-handler");
 // Créer un article
 exports.ajouterArticle = expressAsyncHandler(async (req, res) => {
   try {
-    const { titre, contenu, image } = req.body;
+    const { titre, contenu, image,categorie } = req.body;
     const article = await ArticleModel.create({
       titre,
       contenu,
-      image: req.file.filename,
+      categorie
+      // image: req.file.filename,
     });
     // auteur: req.user._id,
     res.status(201).json(article);

@@ -9,6 +9,6 @@ const {
   authRouter
     .post("/login", Login)
     .post("/token", refreshAccess)
-    .delete("/token", logout)
+    .delete("/token/:token", logout)
   
   module.exports = authRouter

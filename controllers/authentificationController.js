@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt")
 
 //Sign token
 const generateToken = (data) => {
-  const token = jwt.sign(data, process.env.ACCESS_TOKEN, { expiresIn: "30m" })
+  const token = jwt.sign(data, process.env.ACCESS_TOKEN)
   return token
 }
 //Login user [ACCESS TOKEN,REFRESH TOKEN]
@@ -78,7 +78,7 @@ exports.refreshAccess = expressAsyncHandler(async (req, res) => {
 //Logout
 exports.logout = expressAsyncHandler(async (req, res) => {
   try {
-    const { token } = req.body
+    const { token } = req.params
     if (!token) {
       res.status(400)
       throw new Error("No token!")
